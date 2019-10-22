@@ -1,0 +1,4 @@
+<config>
+	<DebugMgr fileName="Log.txt" maxSize="100000" fileStorageActive="True"/>
+	<storageFileName>GameSaveData.xml</storageFileName>
+</config>

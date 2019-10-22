@@ -1,0 +1,311 @@
+fileFormatVersion: 2
+guid: f9ddfcebde545664c828c07c217e5cdf
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bone01
+    100002: Bone02
+    100004: Bone03
+    100006: Bone04
+    100008: Bone05
+    100010: Bone06
+    100012: Bone07
+    100014: Bone08
+    100016: Bone09
+    100018: Bone10
+    100020: Bone11
+    100022: Bone12
+    100024: Bone13
+    100026: Bone14
+    100028: Bone15
+    100030: Bone16
+    100032: Bone17
+    100034: Box03
+    100036: fuente
+    100038: IK Chain01
+    100040: IK Chain02
+    100042: IK Chain03
+    100044: IK Chain04
+    100046: IK Chain05
+    100048: //RootNode
+    100050: laberinto
+    100052: MapaFisico
+    100054: OgreMaxSceneSettings01
+    100056: puerta
+    100058: sierra
+    100060: sierra_XXX
+    100062: Sphere01
+    100064: torreta_pie
+    100066: Torus01
+    400000: Bone01
+    400002: Bone02
+    400004: Bone03
+    400006: Bone04
+    400008: Bone05
+    400010: Bone06
+    400012: Bone07
+    400014: Bone08
+    400016: Bone09
+    400018: Bone10
+    400020: Bone11
+    400022: Bone12
+    400024: Bone13
+    400026: Bone14
+    400028: Bone15
+    400030: Bone16
+    400032: Bone17
+    400034: Box03
+    400036: fuente
+    400038: IK Chain01
+    400040: IK Chain02
+    400042: IK Chain03
+    400044: IK Chain04
+    400046: IK Chain05
+    400048: //RootNode
+    400050: laberinto
+    400052: MapaFisico
+    400054: OgreMaxSceneSettings01
+    400056: puerta
+    400058: sierra
+    400060: sierra_XXX
+    400062: Sphere01
+    400064: torreta_pie
+    400066: Torus01
+    2300000: Box03
+    2300002: fuente
+    2300004: laberinto
+    2300006: MapaFisico
+    2300008: puerta
+    2300010: Sphere01
+    2300012: Torus01
+    3300000: Box03
+    3300002: fuente
+    3300004: laberinto
+    3300006: MapaFisico
+    3300008: puerta
+    3300010: Sphere01
+    3300012: Torus01
+    4300000: laberinto
+    4300002: Torus01
+    4300004: torreta_pie
+    4300006: puerta
+    4300008: sierra_XXX
+    4300010: Box03
+    4300012: fuente
+    4300014: MapaFisico
+    4300016: Sphere01
+    4300018: sierra
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: sierra
+    13700002: sierra_XXX
+    13700004: torreta_pie
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Caja
+    second: {fileID: 2100000, guid: 1bdd7edd8af524c4f87768be45a8e50b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 4e27be87cf3a9914c8a3f1032f666a23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aguasucia
+    second: {fileID: 2100000, guid: 2081ab47af8bc5346904b30dcb47ac21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aire
+    second: {fileID: 2100000, guid: 5593bf4446607044cb869277e0229d9f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: arcos
+    second: {fileID: 2100000, guid: 5cab84bcd3ca1fe4b85c5e81f9aadb81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blancopuro
+    second: {fileID: 2100000, guid: 968e1b70a8fa8704ab9e8c7c6a5ed119, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: calefaccion
+    second: {fileID: 2100000, guid: d7519d857390c1545b70e126f0d1561d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cama
+    second: {fileID: 2100000, guid: ceab5a1833060824992d44db8286679a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: canon
+    second: {fileID: 2100000, guid: 93e2310d5fe3d09439a11940d000a990, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cofre
+    second: {fileID: 2100000, guid: 47bd01ca5b274294a9fd6777f92ff663, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: corredores
+    second: {fileID: 2100000, guid: db89a0bd8de244e48bb9b9642547ac7c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cuadrosierras
+    second: {fileID: 2100000, guid: f885eea6e15edd34e88cc3a3ca7d86ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: egout
+    second: {fileID: 2100000, guid: 2081ab47af8bc5346904b30dcb47ac21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: entrada
+    second: {fileID: 2100000, guid: 8e92c14fb39b3d74eb4760e1ce9d531b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: estanterias
+    second: {fileID: 2100000, guid: 9209589ec31bf9b44a79ad31a9fe6e58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fuente
+    second: {fileID: 2100000, guid: f9a1618e7d7d28c45beac8588b9a4fb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pared metalica
+    second: {fileID: 2100000, guid: 292479c40a70bbf478e3ea3055e9a316, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: puertas
+    second: {fileID: 2100000, guid: af3a83e393dd383429505f2fd39eefc9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rejas
+    second: {fileID: 2100000, guid: d19082824530ae9408957805991da549, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rojo
+    second: {fileID: 2100000, guid: e7217d94370bd224e9b02f4e454e9234, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sierras
+    second: {fileID: 2100000, guid: 7e23edd962652054fb8e3c7674b64c55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: skybox
+    second: {fileID: 2100000, guid: a02bf5b302445a04c901d7b43f212b58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: suelo
+    second: {fileID: 2100000, guid: 9c3efdbf54864ca4b84e0c5e9148c046, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tanke
+    second: {fileID: 2100000, guid: 35e88b4941199284ca981ce4ed6e8792, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vidrios
+    second: {fileID: 2100000, guid: 345acd146a5a5434b9f0596ac5cf34b1, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
