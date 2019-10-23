@@ -137,21 +137,26 @@ public class GameMgr
             //InputServer: servidor de entrada.
 
             //SceneMgr: Gestiona la carga de escenas... 
-            //TODO (SceneMgr)  AddServer<SceneMgr>();
-            //SceneMgr smAux = m_servers.GetComponent<SceneMgr>();
+            //TODO (SceneMgr)  
+            AddServer<SceneMgr>();
+            SceneMgr smAux = m_servers.GetComponent<SceneMgr>();
             //m_spawnerMgr = new SpawnerMgr(smAux);
 
 
             //TODO (InputMgr)
-            //InputMgr inputMgr = AddServer<InputMgr>();
-            //inputMgr.Configure(0, true);
+            m_inputMgr = AddServer<InputMgr>();
+            m_inputMgr.Configure(0, true);
 
 
-            //TODO (SceneMgr)  AddServer<InputMgr>();
+            //TODO (SceneMgr)  
+            //AddServer<InputMgr>();
 
         }
 
-        //TODO :  (SpawnerMgr)
+        // m_customMgrs = new CustomerMgr();
+        //m_inputMgr = new InputMgr();
+        //m_sceneMgr = new SceneMgr();
+        // m_spawnerMgr = new SpawnerMgr(m_sceneMgr);
 
     }
 	
@@ -166,6 +171,15 @@ public class GameMgr
 		return m_spawnerMgr;
 	}
 
+    public SceneMgr GetSceneMgr()
+    {
+        return m_sceneMgr;
+    }
+
+    public InputMgr GetInputMgr()
+    {
+        return m_inputMgr;
+    }
 	
 	public bool ExistServer(string name)
 	{
@@ -238,7 +252,8 @@ public class GameMgr
 	private SpawnerMgr m_spawnerMgr =   null;
 	private GameObject m_servers    =   null;
     private ProjectSpecificMgrs m_customMgrs =   null;
-    
+    private InputMgr m_inputMgr = null;
+    private SceneMgr m_sceneMgr = null;
 
     //Configuration fields...
 	private string m_storageFileName;

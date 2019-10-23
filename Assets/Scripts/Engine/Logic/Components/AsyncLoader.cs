@@ -25,6 +25,7 @@ public class AsyncLoader : MonoBehaviour
         string sceneToLoad = GameMgr.GetInstance().GetStorageMgr().GetVolatile<string>(SceneMgr.SCENE_SECTION, SceneMgr.NEXT_SCENE);
         SceneMgr sceneMgr = GameMgr.GetInstance().GetServer<SceneMgr>();
         // TODO 1: hacer carga asincrona ChangeAsyncScene de la escena guardada en SceneMgr.SCENE_SECTION y SceneMgr.NEXT_SCENE
+        sceneMgr.ChangeAsyncScene(sceneToLoad, onAsyncLoadingProgress);
     }
 
     protected void ProgressLoading(float progress, bool finish)

@@ -10,7 +10,7 @@ public class InputMgr : MonoBehaviour
 {
     public enum TMouseButtonID { LEFT = 0, MIDDLE, RIGHT };
 	//Eventos a los que quiero avisar. El raton o cualquier dispositivo de puntero a presionado sobre alguna parte de la pantalla.
-	public delegate void PointAndClickEvent(GameObject onCollision,Vector3 point, float distance);
+	public delegate void PointAndClickEvent(GameObject onCollision, Vector3 point, float distance);
 
 
     //Enumerado de diferentes eventos de un boton.

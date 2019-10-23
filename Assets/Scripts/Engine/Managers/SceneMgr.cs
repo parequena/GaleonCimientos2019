@@ -86,7 +86,7 @@ public class SceneMgr : MonoBehaviour
 
         //TODO 1 Si next es distinto de "" lo guardamos en el amacenamiento volatil para que la siguiente escena pueda leerla.
         //Avisamos de que vamso a destruir la escena...
-        if (next != "" && next == null)
+        if (next != "" && next != null)
         {
             GameMgr.GetInstance().GetStorageMgr().SetVolatile(SCENE_SECTION, NEXT_SCENE, next);
         }

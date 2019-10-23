@@ -8,10 +8,16 @@ public class InputController : MonoBehaviour {
 	// Use this for initialization
 	protected virtual void Awake(){
         // TODO 1: Res registramos como input especifico para el juego
-       
+        InputMgr inputMgr = GameMgr.GetInstance().GetServer<InputMgr>();
+        if (!inputMgr.IsSetAnyInput())
+        {
+            inputMgr.SetInput(this);
+        }
+        else
+            Debug.LogError("No se puede tener dos instancias de Input en el inputMgr");
     }
-	
-	protected void Start () {
+
+    protected void Start () {
 		
 	}
 	

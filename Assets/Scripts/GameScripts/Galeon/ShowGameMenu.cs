@@ -12,6 +12,7 @@ public class ShowGameMenu : MonoBehaviour
 	protected void Awake()
 	{
         //TODO 1: nos registras en el input al boton return con OnReturnPressed.
+        GameMgr.GetInstance().GetServer<InputMgr>().RegisterReturn(OnReturnPressed);
     }
 	
 	protected void OnReturnPressed()
@@ -19,9 +20,15 @@ public class ShowGameMenu : MonoBehaviour
         //muestro el menu..
         //TODO 2 if type == TPushSceneType.PUSH_SCENE => PushScene else ReturnScene
         if (m_type == TPushSceneType.PUSH_SCENE)
+        {
             Debug.LogError("apilamos la escena de menu ");
+            GameMgr.GetInstance().GetServer<SceneMgr>().PushScene(m_menuSceneName);
+        }
         else
+        {
             Debug.LogError("Desapilamos la escena en la cima de la pila");
+            GameMgr.GetInstance().GetServer<SceneMgr>().PopScene(true);
+        }
 
     }
 
@@ -31,6 +38,8 @@ public class ShowGameMenu : MonoBehaviour
         InputMgr input = GameMgr.GetInstance().GetServer<InputMgr>();
         if (input != null)
             Debug.LogError("desregistramos");
+
+        GameMgr.GetInstance().GetServer<InputMgr>().UnRegisterReturn(OnReturnPressed);
 
     }
 

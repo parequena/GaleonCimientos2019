@@ -18,11 +18,20 @@ public class ChangeSceneUI : MonoBehaviour {
     /// <param name="sceneToGo"></param>
     public void OnChangeScene(string sceneToGo)
     {
+
         //TODO 1 cambiamos de escena o hacemos desapilamos la escena en función de los que indique el inspector.
         if (m_return)
-            Debug.LogError("Desapilando la escena en la cima de la pila");
+        {
+            Debug.Log("Desapilando la escena en la cima de la pila");
+            GameMgr.GetInstance().GetServer<SceneMgr>().PopScene(true);
+        }
         else
-            Debug.LogError("Cambiando de escena a "+ sceneToGo);
+        {
+            Debug.Log("Cambiando de escena a " + sceneToGo);
+            // GameMgr.GetInstance().GetServer<SceneMgr>().PushScene(sceneToGo);
+            GameMgr.GetInstance().GetServer<SceneMgr>().ChangeScene(sceneToGo, m_nextSceneAfterTransitionScene);
+        }
+            
     }
 
     /// <summary>
