@@ -13,10 +13,13 @@ public static class GameMgrExtension
         //CustomMgr ha sido inicializado ya ha sido configurado, si esto es así devolvemos el customMgr del GameMgr, si no es así lo configuramos.
         // eliinar el return null.
 
+        if (!gameMgr.IsCustomMgrInit())
+        {
+            CustomMgrs customMgrs = new CustomMgrs(gameMgr);
+            gameMgr.CustomMgr = customMgrs;
+        }
         return (CustomMgrs)gameMgr.CustomMgr;
-
     }
-
 }
 
 

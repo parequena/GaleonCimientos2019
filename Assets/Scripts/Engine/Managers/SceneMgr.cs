@@ -376,7 +376,8 @@ public class SceneMgr : MonoBehaviour
                 onAsyncLoadingProgress(op.progress, op.isDone);
             }
             //TODO 7 yield return WaitForEndOfFrame bloquea la corrutina hasta el siguiente frame
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
+
         } while (!op.isDone);
 
         if (inStack)
@@ -385,5 +386,18 @@ public class SceneMgr : MonoBehaviour
             StoreSubSceneInCurrentScene(subScene);
         m_numSubSceneLoading--;
         yield return null;
+    }
+
+    public string CurrentSceneName
+    {
+        get { return m_stackScenes.Peek().name; }
+    }
+
+    public Scene GetCurrentScene
+    {
+        get
+        {
+            return SceneManager.GetSceneByName(CurrentSceneName);
+        }
     }
 }
