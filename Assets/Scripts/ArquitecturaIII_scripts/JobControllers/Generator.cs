@@ -38,12 +38,12 @@ public class Generator : MonoBehaviour
 
     private void RunParallel()
     {
-        /*MovingTransformsParallel job = new MovingTransformsParallel(target.position, 1f, speed, Time.deltaTime);
+        MovingTransformsParallel job = new MovingTransformsParallel(target.position, 1f, speed, Time.deltaTime);
         TransformAccessArray transAccArr = new TransformAccessArray(transforms);
         JobHandle handle = job.Schedule(transAccArr);
         handle.Complete();
         transAccArr.Dispose();
-        */
+        
     }
 
     private void RunSecuential()
