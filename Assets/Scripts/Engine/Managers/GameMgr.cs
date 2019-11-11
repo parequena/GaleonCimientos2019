@@ -2,6 +2,10 @@
 using System.Collections;
 using System;
 using System.Runtime.CompilerServices;
+using Object = UnityEngine.Object;
+
+
+
 /// <summary>
 /// Game mgr. Singleton que gestiona todos los managers del juego.
 /// </summary>
@@ -125,33 +129,31 @@ public class GameMgr
 		m_storageMgr = new StorageMgrImp(m_storageFileName);
 		
 		//Inicializamos el servidorPrincipal y le registramos todos los servidores...
-		
-		if(m_servers == null)
-		{
-			m_servers = GameObject.Find("Servers");
-			if(m_servers == null)
-			{
-				m_servers = new GameObject("Servers");
-			}
-            //Registramos todos los servidores...
-            //InputServer: servidor de entrada.
 
-            //SceneMgr: Gestiona la carga de escenas... 
-            //TODO (SceneMgr)  
-            AddServer<SceneMgr>();
-            SceneMgr smAux = m_servers.GetComponent<SceneMgr>();
-            //m_spawnerMgr = new SpawnerMgr(smAux);
+        if (m_servers != null) return;
 
-
-            //TODO (InputMgr)
-            m_inputMgr = AddServer<InputMgr>();
-            m_inputMgr.Configure(0, true);
-
-
-            //TODO (SceneMgr)  
-            //AddServer<InputMgr>();
-
+        m_servers = GameObject.Find("Servers");
+        if(m_servers == null)
+        {
+            m_servers = new GameObject("Servers");
         }
+        //Registramos todos los servidores...
+        //InputServer: servidor de entrada.
+
+        //SceneMgr: Gestiona la carga de escenas... 
+        //TODO (SceneMgr)  
+        AddServer<SceneMgr>();
+        m_servers.GetComponent<SceneMgr>();
+        //m_spawnerMgr = new SpawnerMgr(smAux);
+
+
+        //TODO (InputMgr)
+        m_inputMgr = AddServer<InputMgr>();
+        m_inputMgr.Configure(0, true);
+
+
+        //TODO (SceneMgr)  
+        //AddServer<InputMgr>();
 
         // m_customMgrs = new CustomerMgr();
         //m_inputMgr = new InputMgr();
@@ -211,7 +213,7 @@ public class GameMgr
 	
 	public void UnRegister<T>() where T : Component
 	{
-		Component.Destroy(m_servers.GetComponent<T>());
+		Object.Destroy(m_servers.GetComponent<T>());
 	}
 
     // --------------------- CustomMgrs ---------------------------------
@@ -228,7 +230,7 @@ public class GameMgr
     {
         T t = m_servers.GetComponent<T>();
         if (t != null)
-            Component.DestroyImmediate(t);
+            Object.DestroyImmediate(t);
         t = m_servers.AddComponent<T>();
         return t;
     }

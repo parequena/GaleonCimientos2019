@@ -50,7 +50,7 @@ public class SceneMgr : MonoBehaviour
     {
         if (m_numSubSceneLoading == 0)
         {
-            if (m_deferredSceneChange != null && m_deferredSceneChange != "")
+            if (!string.IsNullOrEmpty(m_deferredSceneChange))
             {
                 StartCoroutine(LoadingAsync(m_deferredSceneChange,m_deferredCallback));
                 m_deferredSceneChange = "";
@@ -58,10 +58,7 @@ public class SceneMgr : MonoBehaviour
         }
     }
 
-    public bool IsLoadingFinish
-    {
-        get { return !m_justAsyncLoaderMainScene; }
-    }
+    public bool IsLoadingFinish => !m_justAsyncLoaderMainScene;
 
     public void RegisterDestroyScene(OnSceneDestroy destroy)
     {
@@ -86,7 +83,7 @@ public class SceneMgr : MonoBehaviour
 
         //TODO 1 Si next es distinto de "" lo guardamos en el amacenamiento volatil para que la siguiente escena pueda leerla.
         //Avisamos de que vamso a destruir la escena...
-        if (next != "" && next != null)
+        if (!string.IsNullOrEmpty(next))
         {
             GameMgr.GetInstance().GetStorageMgr().SetVolatile(SCENE_SECTION, NEXT_SCENE, next);
         }
@@ -260,7 +257,7 @@ public class SceneMgr : MonoBehaviour
 
     protected void BackToLifeScene(TSceneInfo sceneInfo)
     {
-        foreach (string subScene in sceneInfo.subScenes)
+        foreach (var subScene in sceneInfo.subScenes)
         {
             Scene scene = SceneManager.GetSceneByName(subScene);
             if (IsDesactivate(scene))
@@ -273,7 +270,7 @@ public class SceneMgr : MonoBehaviour
 
     protected void DestroyScene(TSceneInfo sceneInfo)
     {
-        foreach (string subscenes in sceneInfo.subScenes)
+        foreach (var subscenes in sceneInfo.subScenes)
         {
             SceneManager.UnloadSceneAsync(subscenes);
         }
@@ -286,7 +283,7 @@ public class SceneMgr : MonoBehaviour
 
     protected void SuspendScene(TSceneInfo sceneInfo)
     {
-        foreach (string subScene in sceneInfo.subScenes)
+        foreach (var subScene in sceneInfo.subScenes)
         {
             Scene scene = SceneManager.GetSceneByName(subScene);
             Activate(scene, false);
@@ -319,7 +316,7 @@ public class SceneMgr : MonoBehaviour
         if (scene.buildIndex >= 0)
         {
             GameObject[] gameObjects = scene.GetRootGameObjects();
-            for (int i = 0; i < gameObjects.Length; ++i)
+            for (var i = 0; i < gameObjects.Length; ++i)
             {
                 gameObjects[i].SetActive(act);
             }
@@ -328,18 +325,16 @@ public class SceneMgr : MonoBehaviour
 
     protected bool IsDesactivate(Scene scene)
     {
-        if (scene.buildIndex >= 0)
+        if (scene.buildIndex < 0) return false;
+
+        GameObject[] gameObjects = scene.GetRootGameObjects();
+        foreach (var t in gameObjects)
         {
-            GameObject[] gameObjects = scene.GetRootGameObjects();
-            for (int i = 0; i < gameObjects.Length; ++i)
-            {
-                if (gameObjects[i].activeInHierarchy)
-                    return false;
-            }
-            return true;
+            if (t.activeInHierarchy)
+                return false;
         }
-        return false;
-        
+        return true;
+
     }
 
     protected IEnumerator LoadingAsync(string sceneName, OnAsyncLoadingProgress onAsyncLoadingProgress)
@@ -371,10 +366,7 @@ public class SceneMgr : MonoBehaviour
         AsyncOperation op = SceneManager.LoadSceneAsync(subScene, LoadSceneMode.Additive);
         do
         {
-            if (onAsyncLoadingProgress != null)
-            {
-                onAsyncLoadingProgress(op.progress, op.isDone);
-            }
+            onAsyncLoadingProgress?.Invoke(op.progress, op.isDone);
             //TODO 7 yield return WaitForEndOfFrame bloquea la corrutina hasta el siguiente frame
             yield return new WaitForEndOfFrame();
 

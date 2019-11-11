@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections;
 using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class EditorLevelLoader : EditorWindow
 {
@@ -25,7 +26,7 @@ public class EditorLevelLoader : EditorWindow
         //Por cada escena...
         GUILayout.BeginVertical();
         GUILayout.Label("Current Scene: ", GUILayout.MaxWidth(100));
-        GUILayout.Label("     " + EditorSceneManager.GetActiveScene().name, EditorStyles.boldLabel);
+        GUILayout.Label("     " + SceneManager.GetActiveScene().name, EditorStyles.boldLabel);
 
         //TODO 2: recorrer las escenas de EditorBuildSettings.scenes accediendo
         //con el path al nombre de la escena.

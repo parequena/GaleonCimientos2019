@@ -64,7 +64,7 @@ public class SpawnerMgr
 	public void DestroyGameObject(GameObject prefab, bool clear = false)
 	{
 		if(clear)
-			GameObject.Destroy(prefab);
+			Object.Destroy(prefab);
 		else
 		{
 			prefab.SetActive(false);
@@ -100,7 +100,7 @@ public class SpawnerMgr
 		{
 			foreach( GameObject go in a_list)
 			{
-				GameObject.Destroy(go);
+				Object.Destroy(go);
 			}
 			a_list.Clear();
 		}
