@@ -176,7 +176,8 @@ public class AttackComponent : MonoBehaviour
 
         // TODO 1 : Registramos RegisterChangeWeapon en el input controller del inputmgr con el event ChangeWeapon
 
-
+        PointAndClickInput input = GameMgr.GetInstance().GetServer<InputMgr>().GetInput<PointAndClickInput>();
+        input.RegisterChangeWeapon(ChangeWeapon);
 
         foreach (TWeapons wp in m_weapons)
 		{

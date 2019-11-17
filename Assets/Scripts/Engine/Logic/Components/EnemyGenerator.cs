@@ -31,18 +31,17 @@ public class EnemyGenerator : MonoBehaviour
 	protected void Update(){
 		m_timeToLastEnemyGenerate -= Time.deltaTime;
 		//Cuando termina el tiempo entre generacion y generacion, creamos un objeto dle pool.
-		if(m_timeToLastEnemyGenerate < 0 && _prefabs.Length > 0 && m_numEnemies < m_numMaxEnemies)
-		{
-			m_numEnemies++;
-			m_timeToLastEnemyGenerate = m_timeToGenerateS;
-			int enemyIdx = Random.Range(0,_prefabs.Length);
-			Vector3 position = transform.position;
-			float radious = Random.Range(0.0f,_generateRadious);
-			position += m_offset * radious;
-            //Par instanciarlo usamos el SpawnerMgr. Si lo usamos podremos utilizar el pool de objetos precargados
-            //lo que nos ayudara a reducir la fragmentacio nde memoria.
-            ///TODO 1 instanciar usando el spawnerMGr.
-        }
+        if (!(m_timeToLastEnemyGenerate < 0) || _prefabs.Length <= 0 || m_numEnemies >= m_numMaxEnemies) return;
+        m_numEnemies++;
+        m_timeToLastEnemyGenerate = m_timeToGenerateS;
+        int enemyIdx = Random.Range(0,_prefabs.Length);
+        Vector3 position = transform.position;
+        float radious = Random.Range(0.0f,_generateRadious);
+        position += m_offset * radious;
+        //Par instanciarlo usamos el SpawnerMgr. Si lo usamos podremos utilizar el pool de objetos precargados
+        //lo que nos ayudara a reducir la fragmentacio nde memoria.
+        ///TODO 1 instanciar usando el spawnerMGr.
+        GameMgr.GetInstance().GetSpawnerMgr().CreateNewGameObject(_prefabs[enemyIdx], position, Quaternion.identity);
     }
 	
 

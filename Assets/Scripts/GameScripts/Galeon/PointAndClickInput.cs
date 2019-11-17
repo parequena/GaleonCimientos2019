@@ -71,7 +71,11 @@ public class PointAndClickInput : InputController {
 		foreach(TWeapons weapon in  m_weaponKeyAsign)
 		{
             //TODO 1: lanzamos el evento m_changeWeapon si Input.GetKeyDown(weapon.keyCode)
-
+            if (Input.GetKeyDown(weapon.keyCode))
+            {
+                if (m_changeWeapon != null)
+                    m_changeWeapon(weapon.weaponIndex);
+            }
 
         }
     }

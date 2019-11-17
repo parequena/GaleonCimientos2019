@@ -15,18 +15,16 @@ public class SubSceneLoader : MonoBehaviour
 
     void OnTriggerEnter(Collider other) {
         //Destroyo las subscenas
-        if (other.gameObject.tag == m_playerTag)
+        if (other.gameObject.tag != m_playerTag) return;
+        //Cargo las nuevas...
+        SceneMgr sceneMgr = GameMgr.GetInstance().GetServer<SceneMgr>();
+        foreach (string subScene in m_subScenesToUnload)
         {
-            //Cargo las nuevas...
-            SceneMgr sceneMgr = GameMgr.GetInstance().GetServer<SceneMgr>();
-            foreach (string subScene in m_subScenesToUnload)
-            {
-                sceneMgr.UnloadSubScene(subScene, m_destroyingSubScenes);
-            }
-
-            StartCoroutine("Loading");
+            sceneMgr.UnloadSubScene(subScene, m_destroyingSubScenes);
         }
-	}
+
+        StartCoroutine("Loading");
+    }
 
 
     IEnumerator Loading()
@@ -34,23 +32,12 @@ public class SubSceneLoader : MonoBehaviour
         SceneMgr sceneMgr = GameMgr.GetInstance().GetServer<SceneMgr>();
         foreach (string subScene in m_subScenesToLoad)
         {
-
-            if (sceneMgr.IsLoadingFinish)
-            {
-                Debug.Log("Loading");
-                //TODO 1: Cargar la subescena que toque.
-                
-            }
-            else
-            {
-                Debug.Log("IsLoadingFinish waiting");
-            }
+            Debug.Log(sceneMgr.IsLoadingFinish ? "Loading" : "IsLoadingFinish waiting");
             yield return null;
         }
-        if (m_subSceneLoaderActivate != null)
-        {
-            m_subSceneLoaderActivate.SetActive(true);
-            this.gameObject.SetActive(false);
-        }
+
+        if (m_subSceneLoaderActivate == null) yield break;
+        m_subSceneLoaderActivate.SetActive(true);
+        this.gameObject.SetActive(false);
     }
 }

@@ -45,7 +45,8 @@ public class PointAndClickController : MonoBehaviour
 		m_inputMgr = GameMgr.GetInstance().GetServer<InputMgr>();
         Debug.Assert(m_inputMgr != null, "Error, no se ha cargado el inputMgr");
         //TODO 1 registrarnos en RegisterPointAndClickEvent con (OnBeginClick, null, OnBeginClick);
-        
+        m_inputMgr.RegisterPointAndClickEvent(OnBeginClick, OnClicked, OnBeginClick);
+
         m_speed = m_initialSpeed;
 		m_rightInstantAngle = m_angleToInstantRotate;
 		m_leftInstantAngle = 365 - m_angleToInstantRotate;
